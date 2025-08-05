@@ -61,7 +61,8 @@ const HomePage = () => {
   }, [auth.reqUser]);
 
   const connect = () => {
-    const sock = new SockJS("http://localhost:5454/ws");
+    // const sock = new SockJS("http://localhost:5454/ws");
+     const sock = new SockJS("process.env.REACT_APP_API_URL/ws");
     const temp = over(sock);
     setStompClient(temp);
     const headers = {
