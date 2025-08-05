@@ -31,7 +31,7 @@ import CreateGroup from "../Group/CreateGroup";
 
 let soket, selectedChatCompare;
 
-const HomePage = () => {
+const   HomePage = () => {
   const dispatch = useDispatch();
   const { auth, chat, message } = useSelector((store) => store);
   const token = localStorage.getItem("token");
