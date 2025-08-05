@@ -39,12 +39,12 @@ const Login = () => {
  
 
  //redirect to main page if register success
-//  useEffect(() => {
-//    if (auth.reqUser) {
+ useEffect(() => {
+   if (auth.reqUser) {
     
-//     navigate("/")
-//   }
-//  }, [auth.reqUser])
+    navigate("/")
+  }
+ }, [auth.reqUser])
   
   useEffect(() => {
     if (auth.login?.error) {

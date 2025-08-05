@@ -32,13 +32,13 @@ const token = localStorage.getItem("token");
  }, [auth.isAuth,token])
  
 
- //redirect to main page if register success
-//  useEffect(() => {
-//   if (auth.reqUser) {
+//  redirect to main page if register success
+ useEffect(() => {
+  if (auth.reqUser) {
   
-//    navigate("/")
-//   }
-//  },[auth.reqUser])
+   navigate("/")
+  }
+ },[auth.reqUser])
  
 
 // dispacth register action
