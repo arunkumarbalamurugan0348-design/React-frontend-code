@@ -42,11 +42,22 @@ const token = localStorage.getItem("token");
  
 
 // dispacth register action
-  const handleSubmit = (event) => {
-   event.preventDefault();
-   dispatch(register(inputData))
-    
-  };
+ const handleSubmit = (event) => {
+  event.preventDefault();
+
+  const { full_name, email, password } = inputData;
+
+ 
+  if (!full_name || !email || !password) {
+    setOpen(true); 
+      auth.signup = { message: "All fields are required", isAuth: false };
+    return;
+  }
+
+ 
+  dispatch(register(inputData));
+};
+
 
 
   useEffect(() => {
@@ -68,7 +79,8 @@ const token = localStorage.getItem("token");
               placeholder="Enter username"
               name="full_name"
               onChange={(e) => handleChange(e)}
-              value={inputData.username}
+              value={inputData.full_name}
+
             />
           </div>
           <div>
